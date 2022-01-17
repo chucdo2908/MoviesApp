@@ -36,36 +36,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: AppBar(
-        backgroundColor: Colors.amberAccent,
-        elevation: 0,
-        leading: Icon(Icons.menu),
-        title: Align(
-          child: Text("Home"),
-          alignment: Alignment.center,
-        ),
-        actions: [
-          Padding(
-              padding: EdgeInsets.all(10.0),
-              child: Container(
-                width: 36,
-                height: 30,
-                decoration: BoxDecoration(
-                  color: Colors.white60,
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                child: Icon(
-                  Icons.people,
-                  color: Colors.red,
-                ),
-              ),
-          ),
-
-        ],
-      ),
-      body: SafeArea(
-        child: FutureBuilder(
+      body: FutureBuilder(
             future: _client.getdata(), // here we will get http response
             builder: (context, snapshot) {
               if (snapshot.hasData) {
@@ -74,8 +45,6 @@ class _HomePageState extends State<HomePage> {
                 return CircularProgressIndicator();
               }
             }),
-      ),
-
     );
   }
 }

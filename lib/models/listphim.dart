@@ -11,7 +11,7 @@ class Listphim{
   final String? releaseDate;
   final String? title;
   final bool? video;
-  final double? voteAverage;
+  final num? voteAverage;
   final int? voteCount;
   Listphim({
     this.adult,
@@ -48,5 +48,4 @@ class Listphim{
       voteCount : json['vote_count'],
     );
   }
-
 }
